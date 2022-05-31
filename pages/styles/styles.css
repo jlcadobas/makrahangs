@@ -1,0 +1,446 @@
+
+    *, *::before, *::after {
+
+        box-sizing: border-box;
+  }
+
+    /* Section: Banner
+    *
+    *   - add font: Poppins.
+    *   - declare color variable on root file.
+    *   - add font to the body.
+    */  
+
+    @font-face {
+
+        font-family: 'Poppins';
+        src: url('../poppins-font/PoppinsRegular-B2Bw.otf');
+    }
+
+    :root {
+
+        --brown: #C49265;
+    }
+
+    body {
+
+        font-family: 'Poppins', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    .container {
+
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .full-height-grow {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+        /* Navigation
+        *
+        *   - add height to nav, and bottom border.
+        *   - display links inline-block, align vertically remove decorations etc.
+        *   - add link hover styles.
+        *   - add margin to logo.
+        *   - extra classes.
+        */
+    
+        nav {
+
+            height: 100px;
+            border-bottom: 1px solid black;
+            
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        a, .add-styles {
+
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        a:hover, .active, .add-styles {
+
+            color: var(--brown);
+            cursor: pointer;
+        }
+
+        .logo {
+
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+            letter-spacing: 1em;
+        }
+
+        .main-nav-link {
+
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-menu, .hide {
+
+            display: none;
+        }
+
+        @media only screen and (max-width: 900px) {
+
+            .main-nav-link {
+
+                display: none;
+            }
+
+            .hamburger-menu {
+
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+            }
+
+            .show-menu {
+
+                display: block;
+                position: absolute;
+                z-index: 9;
+                width: 70%;
+                height: 60%;
+                top: 20vh;
+                left: 15vh;
+                background-color: white;
+                border-radius: 20px;
+                border: 1px solid var(--brown);
+            }
+
+            .show-menu div {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 100%;
+            }
+
+            .show-menu a {
+
+                font-size: calc(16px + 2vw);
+            }
+        }
+
+        .prices, .color {
+
+            color: var(--brown);
+        }
+
+        .color {
+
+            text-align: center;
+        }
+
+            /* Tagline 
+            *      
+            *   - declare size for image-banner.
+            *   - add styles to tagline-span.
+            *   - add button styles.
+            */
+
+            .tagline-span:nth-of-type(1), .tagline-span:nth-of-type(2){
+
+                font-size: calc(12px + 5vw);
+                color: var(--brown);
+            }
+
+            .tagline-span:nth-of-type(3), .tagline-span:nth-of-type(4) {
+
+                font-size: calc(12px + 3vw);
+            }
+
+            .tagline-span:nth-of-type(4) {
+
+                letter-spacing: 20px;
+                font-style: italic;
+            }
+
+            #banner {
+
+                flex-grow: 1;
+            }
+
+            button, button.add-styles {
+
+                width: 130px;
+                padding: 10px;
+
+                background-color: var(--brown); 
+                border-radius: 10px;
+                border: 1px solid var(--brown);
+
+                cursor: pointer;
+            }
+
+            button a, .add-styles {
+
+                color: white;
+            }
+
+            button:hover, button:hover a, .add-styles:hover {
+
+                background-color: white;
+                color: var(--brown);
+            }
+
+            .bold {
+
+                font-weight: bold;
+            }
+
+            .item-size {
+
+                width: 400px;
+                height: 400px;
+            }
+
+            .banner-image {
+
+                width: 30vw;
+                height: 30vw;
+        
+                -moz-box-shadow: 15px 15px 5px var(--brown);
+                -webkit-box-shadow: 15px 15px 5px var(--brown);
+                box-shadow: 15px 15px 5px var(--brown);
+            }
+        
+            #tagline {
+        
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                padding-bottom: 1%;
+                height: 80vh;
+            }
+
+            @media only screen and (max-width: 750px) {
+
+                #tagline {
+
+                    flex-direction: column;
+                    margin: 1% 0%;
+                    justify-content: space-evenly;
+                }
+
+                .banner-image {
+
+                    width: 18.75em;
+                    height: 18.75em;
+                }
+            }
+
+            /*
+            *   Footer
+            *   - footer navigation links
+            *   - link containers
+            *   - appreciation note
+            *   - after footer
+            */
+
+            footer {
+
+                flex-grow: 1;
+                background-color: var(--brown);
+            }
+
+            .footer-nav {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            /* footer navigation links */
+
+            .logo-links a, .site-navigation a, .terms-of-service a {
+
+                color: white;
+            }
+
+            .logo-links a:hover, .site-navigation a:hover, .terms-of-service a:hover {
+
+                color: black;
+            } 
+
+            .logo-links {
+
+                width: 375px;
+            }
+
+            .social-media-links {
+
+                width: 30vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            /* link containers */
+
+            .logo-links-container {
+
+                height: 40vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .logo-links img {
+
+                margin-right: 15px;
+            }
+
+            .site-navigation, .terms-of-service, .need-help {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .site-navigation, .service-help-container {
+
+                height: 50vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .site-navigation a, .terms-of-service a, .need-help a{
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 5px;
+            }
+
+            .need-help {
+
+                margin-top: 20px;
+            }
+
+            .need-help h3 {
+
+                text-align: center;
+            }
+
+            .need-help p {
+
+                color: white;
+            }
+
+            /* appreciation note */
+
+            .position-absolute {
+
+                position: relative;
+                width: 45vw;
+                min-width: 400px;
+                height: 50vh;
+                bottom: 30vh;
+                left: 40vw;
+                margin-bottom: -30vh;
+            }
+
+            .appreciation-container {
+
+                position: absolute;
+                width: 45vw;
+                min-width: 400px;
+                height: 50vh;
+                background-color: #B07B4A;
+                border-radius: 20px 20px 0px 0px;    
+            }
+
+            .thank-you-note {
+
+                font-size: calc(12px + 1vw);
+                font-style: italic;
+                font-weight: bold;
+                letter-spacing: 20px;
+                text-transform: uppercase;
+                text-align: justify;
+                margin: 0.5vh 5vw;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .circle {
+
+                display: block;
+                margin: 20px auto;
+                background-color: var(--brown);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            /* after-footer */
+
+            .after-footer {
+
+                height: 8vh;
+                background-color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+
+            .copyright, .soc-med-logo {
+
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin-right: 10px; 
+            }
+
+            @media only screen and (max-width: 1000px) {
+
+                .footer-nav {
+
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                }
+
+                .social-media-links {
+
+                    margin: 0px auto;
+                }
+
+                .position-absolute {
+
+                    margin-top: 30vh;
+                    left: 0; 
+                    right: 0; 
+                    margin-left: auto; 
+                    margin-right: auto; 
+                }
+            }
